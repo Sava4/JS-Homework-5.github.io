@@ -29,7 +29,7 @@ function creatNewUser () {
             let now = Date.now();
             let bday = new Date(year, month, day);
             let ageMillis = now - bday;
-            let millisInYear = 1000 * 60 * 60 * 24 * 365.25 // 1 in 4 years is 366
+            let millisInYear = 1000 * 60 * 60 * 24 * 365.25 //seconds * minutes * hours * day * year. 1 in 4 years is 366
             let age = Math.floor(ageMillis / millisInYear);
             return age;
             },
