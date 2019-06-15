@@ -25,9 +25,12 @@ function creatNewUser () {
             },
         getAge() {
             let [day, month, year] = this.birthday.split('.');
+            month = month--; // month starts from 0
             let now = Date.now();
             let bday = new Date(year, month, day);
-            let age = new Date (now - bday).getFullYear() - 1970;
+            let ageMillis = now - bday;
+            let millisInYear = 1000 * 60 * 60 * 24 * 365.25 // 1 in 4 years is 366
+            let age = Math.floor(ageMillis / millisInYear);
             return age;
             },
         getPassword() {
